@@ -10,7 +10,9 @@ export const metadata: Metadata = {
   title: "Isabela Ayn M. Deocampo - Web Designer & Developer",
   description:
     "Portfolio of Isabela Ayn M. Deocampo, a Web Designer & Developer specializing in responsive websites, UI/UX design, and full-stack development.",
-  generator: "v0.app",
+  icons: {
+    icon: "/women.ico", 
+  },
 }
 
 export default function RootLayout({
