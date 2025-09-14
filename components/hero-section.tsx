@@ -67,7 +67,7 @@ export function HeroSection() {
             <div className="relative">
               <div className="w-96 h-96 rounded-full bg-gradient-to-br from-primary via-accent to-secondary p-2 shadow-2xl animate-pulse-glow">
                 <Image
-                  src="/images/profile.jpg"
+                  src="/images/profile2.png"
                   alt="Isabela Ayn M. Deocampo"
                   width={600}
                   height={600}

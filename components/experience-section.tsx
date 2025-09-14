@@ -52,51 +52,48 @@ export function ExperienceSection() {
             My professional journey in web development and design, from internship to current role.
           </p>
         </div>
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+  {experiences.map((exp, index) => (
+    <Card key={index} className="relative overflow-hidden h-full">
+      <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-primary to-accent"></div>
+    <CardHeader>
+  <div>
+    <CardTitle className="text-xl mb-2">{exp.title}</CardTitle>
+    <div className="flex items-center gap-6 text-muted-foreground text-sm flex-wrap">
+      <span className="font-medium text-primary">{exp.company}</span>
+      <div className="flex items-center gap-1">
+        <MapPin className="h-4 w-4" />
+        <span>{exp.location}</span>
+      </div>
+      <div className="flex items-center gap-1">
+        <Calendar className="h-4 w-4" />
+        <span>{exp.period}</span>
+      </div>
+    </div>
+  </div>
+</CardHeader>
 
-        <div className="space-y-8">
-          {experiences.map((exp, index) => (
-            <Card key={index} className="relative overflow-hidden">
-              <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-primary to-accent"></div>
-              <CardHeader>
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                  <div>
-                    <CardTitle className="text-xl mb-2">{exp.title}</CardTitle>
-                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-muted-foreground">
-                      <span className="font-medium text-primary">{exp.company}</span>
-                      <div className="flex items-center gap-4">
-                        <div className="flex items-center gap-1">
-                          <MapPin className="h-4 w-4" />
-                          <span className="text-sm">{exp.location}</span>
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <Calendar className="h-4 w-4" />
-                          <span className="text-sm">{exp.period}</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 mb-4">
-                  {exp.description.map((item, i) => (
-                    <li key={i} className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                      <span className="text-pretty">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="flex flex-wrap gap-2">
-                  {exp.skills.map((skill, i) => (
-                    <Badge key={i} variant="secondary" className="text-xs">
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+      <CardContent>
+        <ul className="space-y-2 mb-4">
+          {exp.description.map((item, i) => (
+            <li key={i} className="flex items-start gap-2">
+              <div className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+              <span className="text-pretty">{item}</span>
+            </li>
+          ))}
+        </ul>
+        <div className="flex flex-wrap gap-2">
+          {exp.skills.map((skill, i) => (
+            <Badge key={i} variant="secondary" className="text-xs">
+              {skill}
+            </Badge>
           ))}
         </div>
+      </CardContent>
+    </Card>
+  ))}
+</div>
+
       </div>
     </section>
   )
