@@ -1,0 +1,245 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated to Mitsuri-inspired coral and mint green color palette */
+  --background: oklch(0.98 0.02 35); /* Soft coral background */
+  --foreground: oklch(0.25 0.01 264); /* Dark text for contrast */
+  --card: oklch(0.97 0.01 180); /* Alice blue cards */
+  --card-foreground: oklch(0.25 0.01 264); /* Dark text on cards */
+  --popover: oklch(1 0 0); /* White popover background */
+  --popover-foreground: oklch(0.25 0.01 264); /* Dark popover text */
+  --primary: oklch(0.68 0.15 35); /* Vibrant coral primary */
+  --primary-foreground: oklch(1 0 0); /* White text on primary */
+  --secondary: oklch(0.85 0.12 140); /* Mint green secondary */
+  --secondary-foreground: oklch(0.25 0.01 264); /* Dark text on secondary */
+  --muted: oklch(0.97 0.01 180); /* Light muted background */
+  --muted-foreground: oklch(0.45 0.01 264); /* Muted text */
+  --accent: oklch(0.85 0.12 140); /* Mint green accent */
+  --accent-foreground: oklch(0.25 0.01 264); /* Dark text on accent */
+  --destructive: oklch(0.55 0.2 25); /* Error color */
+  --destructive-foreground: oklch(1 0 0); /* White text on destructive */
+  --border: oklch(0.88 0.02 35); /* Light coral border */
+  --input: oklch(0.97 0.01 180); /* Light input background */
+  --ring: oklch(0.68 0.15 35 / 0.5); /* Coral focus ring */
+  --chart-1: oklch(0.68 0.15 35); /* Coral chart color */
+  --chart-2: oklch(0.85 0.12 140); /* Mint green chart color */
+  --chart-3: oklch(0.75 0.1 60); /* Peach chart color */
+  --chart-4: oklch(0.65 0.1 200); /* Light blue chart color */
+  --chart-5: oklch(0.9 0.05 320); /* Light pink chart color */
+  --radius: 0.75rem; /* More rounded for friendly feel */
+  --sidebar: oklch(0.97 0.01 180);
+  --sidebar-foreground: oklch(0.25 0.01 264);
+  --sidebar-primary: oklch(0.68 0.15 35);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.85 0.12 140);
+  --sidebar-accent-foreground: oklch(0.25 0.01 264);
+  --sidebar-border: oklch(0.88 0.02 35);
+  --sidebar-ring: oklch(0.68 0.15 35 / 0.5);
+}
+
+.dark {
+  /* Updated dark mode to maintain Mitsuri theme with darker variants */
+  --background: oklch(0.12 0.02 35);
+  --foreground: oklch(0.95 0.01 35);
+  --card: oklch(0.15 0.02 35);
+  --card-foreground: oklch(0.95 0.01 35);
+  --popover: oklch(0.15 0.02 35);
+  --popover-foreground: oklch(0.95 0.01 35);
+  --primary: oklch(0.68 0.15 35);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.85 0.12 140);
+  --secondary-foreground: oklch(0.15 0.02 35);
+  --muted: oklch(0.18 0.02 35);
+  --muted-foreground: oklch(0.65 0.01 35);
+  --accent: oklch(0.85 0.12 140);
+  --accent-foreground: oklch(0.15 0.02 35);
+  --destructive: oklch(0.55 0.2 25);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.25 0.02 35);
+  --input: oklch(0.18 0.02 35);
+  --ring: oklch(0.68 0.15 35 / 0.5);
+  --chart-1: oklch(0.68 0.15 35);
+  --chart-2: oklch(0.85 0.12 140);
+  --chart-3: oklch(0.75 0.1 60);
+  --chart-4: oklch(0.65 0.1 200);
+  --chart-5: oklch(0.9 0.05 320);
+  --sidebar: oklch(0.15 0.02 35);
+  --sidebar-foreground: oklch(0.95 0.01 35);
+  --sidebar-primary: oklch(0.68 0.15 35);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.85 0.12 140);
+  --sidebar-accent-foreground: oklch(0.15 0.02 35);
+  --sidebar-border: oklch(0.25 0.02 35);
+  --sidebar-ring: oklch(0.68 0.15 35 / 0.5);
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* Added gradient background for Mitsuri-inspired vibrant look */
+    background: linear-gradient(135deg, oklch(0.98 0.02 35) 0%, oklch(0.95 0.03 140) 100%);
+    min-height: 100vh;
+  }
+}
+
+/* Added custom animations for more dynamic feel */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px oklch(0.68 0.15 35 / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px oklch(0.68 0.15 35 / 0.5);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.scroll-animate.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-animate:nth-child(even) {
+  transform: translateX(-50px);
+}
+
+.scroll-animate:nth-child(even).animate-in {
+  transform: translateX(0);
+}
+
+/* Enhanced animations for different sections */
+#hero.scroll-animate {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+#about.scroll-animate.animate-in {
+  animation: slideInUp 0.8s ease-out forwards;
+}
+
+#experience.scroll-animate.animate-in {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+#projects.scroll-animate.animate-in {
+  animation: slideInUp 0.8s ease-out forwards;
+}
+
+#services.scroll-animate.animate-in {
+  animation: slideInRight 0.8s ease-out forwards;
+}
+
+#contact.scroll-animate.animate-in {
+  animation: slideInUp 0.8s ease-out forwards;
+}
