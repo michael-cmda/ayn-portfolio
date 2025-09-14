@@ -3,9 +3,10 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Eye } from "lucide-react"
+import { Eye, Play } from "lucide-react"
 import Image from "next/image"
 import { ImageModal } from "./image-modal"
+import { VideoModal } from "./video-modal" // 👈 make sure this file exists
 
 export function ProjectsSection() {
   const projects = [
@@ -34,7 +35,7 @@ export function ProjectsSection() {
       title: "Pet Profiling System",
       description:
         "Desktop web application for veterinary offices to register pets, track vaccination status, and manage patient records.",
-      image: "/images/pet-profiling-hero.png",
+      video: "/videos/video.mp4", // 👈 your video here
       technologies: ["Web App", "Database", "Veterinary", "Record Management"],
     },
     {
@@ -51,8 +52,8 @@ export function ProjectsSection() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-primary">
-  Featured Projects ✨
-</h2>
+            Featured Projects ✨
+          </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty">
             A showcase of my work spanning mobile apps, web systems, and cross-platform solutions.
           </p>
@@ -66,35 +67,67 @@ export function ProjectsSection() {
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               <div className="relative overflow-hidden">
-                <Image
-                  src={project.image || "/placeholder.svg"}
-                  alt={project.title}
-                  width={project.featured ? 800 : 400}
-                  height={project.featured ? 400 : 300}
-                  className="w-full h-48 sm:h-56 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
+                {project.video ? (
+                  <video
+                    src={project.video}
+                    muted
+                    autoPlay
+                    loop
+                    playsInline
+                    className="w-full h-48 sm:h-56 object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                ) : (
+                  <Image
+                    src={project.image || "/placeholder.svg"}
+                    alt={project.title}
+                    width={project.featured ? 800 : 400}
+                    height={project.featured ? 400 : 300}
+                    className="w-full h-48 sm:h-56 object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                )}
+
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-accent/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="absolute bottom-4 left-4 right-4 flex gap-2">
-                    <ImageModal
-                      src={project.image || "/placeholder.svg"}
-                      alt={project.title}
-                      title={project.title}
-                      trigger={
-                        <Button
-                          size="sm"
-                          variant="secondary"
-                          className="flex-1 bg-background/90 hover:bg-background text-foreground"
-                        >
-                          <Eye className="h-4 w-4 mr-2" />
-                          View Image
-                        </Button>
-                      }
-                    />
+                    {project.video ? (
+                      <VideoModal
+                        src={project.video}
+                        title={project.title}
+                        trigger={
+                          <Button
+                            size="sm"
+                            variant="secondary"
+                            className="flex-1 bg-background/90 hover:bg-background text-foreground"
+                          >
+                            <Play className="h-4 w-4 mr-2" />
+                            Watch Video
+                          </Button>
+                        }
+                      />
+                    ) : (
+                      <ImageModal
+                        src={project.image || "/placeholder.svg"}
+                        alt={project.title}
+                        title={project.title}
+                        trigger={
+                          <Button
+                            size="sm"
+                            variant="secondary"
+                            className="flex-1 bg-background/90 hover:bg-background text-foreground"
+                          >
+                            <Eye className="h-4 w-4 mr-2" />
+                            View Image
+                          </Button>
+                        }
+                      />
+                    )}
                   </div>
                 </div>
               </div>
+
               <CardHeader>
-                <CardTitle className="text-xl group-hover:text-primary transition-colors">{project.title}</CardTitle>
+                <CardTitle className="text-xl group-hover:text-primary transition-colors">
+                  {project.title}
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4 text-pretty">{project.description}</p>
