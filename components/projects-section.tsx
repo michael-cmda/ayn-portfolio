@@ -10,6 +10,14 @@ import { VideoModal } from "./video-modal" // 👈 make sure this file exists
 
 export function ProjectsSection() {
   const projects = [
+  {
+      title: "Pet Profiling System",
+      description:
+        "Desktop web application for veterinary offices to register pets, track vaccination status, and manage patient records.",
+      video: "/videos/video.mp4", // 👈 your video here
+      technologies: ["Web App", "Database", "Veterinary", "Record Management"],
+      featured:true
+    },
     {
       title: "VetInspect",
       description:
@@ -30,13 +38,6 @@ export function ProjectsSection() {
         "A mood tracking application that allows users to monitor daily emotions and gain insights into emotional well-being.",
       image: "/images/mood-lamp-hero.png",
       technologies: ["Flutter", "Mood Tracking", "Data Visualization", "Mental Health"],
-    },
-    {
-      title: "Pet Profiling System",
-      description:
-        "Desktop web application for veterinary offices to register pets, track vaccination status, and manage patient records.",
-      video: "/videos/video.mp4", // 👈 your video here
-      technologies: ["Web App", "Database", "Veterinary", "Record Management"],
     },
     {
       title: "Festival QR Registration",
