@@ -25,31 +25,31 @@ export function Navigation() {
           <div className="hidden md:flex space-x-8">
             <button
               onClick={() => scrollToSection("home")}
-              className="text-foreground hover:text-primary transition-colors"
+              className="text-primary hover:text-green-300 transition-colors"
             >
               Home
             </button>
             <button
               onClick={() => scrollToSection("about")}
-              className="text-foreground hover:text-primary transition-colors"
+              className="text-primary hover:text-green-300 transition-colors"
             >
               About
             </button>
             <button
               onClick={() => scrollToSection("experience")}
-              className="text-foreground hover:text-primary transition-colors"
+              className="text-primary hover:text-green-300 transition-colors"
             >
               Experience
             </button>
             <button
               onClick={() => scrollToSection("projects")}
-              className="text-foreground hover:text-primary transition-colors"
+              className="text-primary hover:text-green-300 transition-colors"
             >
               Projects
             </button>
             <button
               onClick={() => scrollToSection("contact")}
-              className="text-foreground hover:text-primary transition-colors"
+              className="text-primary hover:text-green-300 transition-colors"
             >
               Contact
             </button>
@@ -58,7 +58,7 @@ export function Navigation() {
           {/* Mobile menu button */}
           <div className="md:hidden">
             <Button variant="ghost" size="sm" onClick={() => setIsOpen(!isOpen)}>
-              {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              {isOpen ? <X className="h-5 w-5 text-primary" /> : <Menu className="h-5 w-5 text-primary" />}
             </Button>
           </div>
         </div>
@@ -69,31 +69,31 @@ export function Navigation() {
             <div className="px-2 pt-2 pb-3 space-y-1 bg-background border-t border-border">
               <button
                 onClick={() => scrollToSection("home")}
-                className="block px-3 py-2 text-foreground hover:text-primary transition-colors w-full text-left"
+                className="block px-3 py-2 text-primary hover:text-green-300 transition-colors w-full text-left"
               >
                 Home
               </button>
               <button
                 onClick={() => scrollToSection("about")}
-                className="block px-3 py-2 text-foreground hover:text-primary transition-colors w-full text-left"
+                className="block px-3 py-2 text-primary hover:text-green-300 transition-colors w-full text-left"
               >
                 About
               </button>
               <button
                 onClick={() => scrollToSection("experience")}
-                className="block px-3 py-2 text-foreground hover:text-primary transition-colors w-full text-left"
+                className="block px-3 py-2 text-primary hover:text-green-300 transition-colors w-full text-left"
               >
                 Experience
               </button>
               <button
                 onClick={() => scrollToSection("projects")}
-                className="block px-3 py-2 text-foreground hover:text-primary transition-colors w-full text-left"
+                className="block px-3 py-2 text-primary hover:text-green-300 transition-colors w-full text-left"
               >
                 Projects
               </button>
               <button
                 onClick={() => scrollToSection("contact")}
-                className="block px-3 py-2 text-foreground hover:text-primary transition-colors w-full text-left"
+                className="block px-3 py-2 text-primary hover:text-green-300 transition-colors w-full text-left"
               >
                 Contact
               </button>
