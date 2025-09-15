@@ -11,7 +11,7 @@ export function ContactSection() {
             Get In Touch ✨
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty">
-            Ready to start you next project? Let's discuss how I can help bring your ideas to life.
+            Ready to start your next project? Let's discuss how I can help bring your ideas to life.
           </p>
         </div>
 
