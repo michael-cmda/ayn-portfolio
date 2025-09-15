@@ -29,12 +29,12 @@ export function Navigation() {
             >
               Home
             </button>
-            <button
+            {/* <button
               onClick={() => scrollToSection("about")}
               className="text-primary hover:text-green-300 transition-colors"
             >
               About
-            </button>
+            </button> */}
             <button
               onClick={() => scrollToSection("experience")}
               className="text-primary hover:text-green-300 transition-colors"

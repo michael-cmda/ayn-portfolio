@@ -14,10 +14,10 @@ export default function Home() {
       <ScrollAnimations />
       <Navigation />
       <HeroSection />
-      <AboutSection />
+      <ServicesSection />
+      {/* <AboutSection /> */}
       <ExperienceSection />
       <ProjectsSection />
-      <ServicesSection />
       <ContactSection />
       <Footer />
     </main>

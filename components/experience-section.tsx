@@ -54,7 +54,7 @@ export function ExperienceSection() {
         </div>
 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
   {experiences.map((exp, index) => (
-    <Card key={index} className="relative overflow-hidden h-full">
+    <Card key={index} className=" bg-white relative overflow-hidden h-full">
       <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-primary to-accent"></div>
     <CardHeader>
   <div>

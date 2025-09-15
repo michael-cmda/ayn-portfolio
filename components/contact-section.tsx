@@ -4,7 +4,7 @@ import { Mail, Phone, MapPin, Linkedin } from "lucide-react"
 
 export function ContactSection() {
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-card/30">
+    <section id="contact" className="py-15 px-4 sm:px-6 lg:px-8 bg-card/30">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">

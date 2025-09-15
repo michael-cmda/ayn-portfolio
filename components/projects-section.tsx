@@ -51,7 +51,7 @@ export function ProjectsSection() {
   return (
     <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-card/30 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-primary">
             Featured Projects ✨
           </h2>
@@ -64,7 +64,7 @@ export function ProjectsSection() {
           {projects.map((project, index) => (
             <Card
               key={index}
-              className={`group hover:shadow-xl hover:shadow-primary/20 transition-all duration-300 overflow-hidden border-2 hover:border-primary/50 animate-float ${project.featured ? "md:col-span-2 lg:col-span-2" : ""}`}
+              className={`bg-white group hover:shadow-xl hover:shadow-primary/20 transition-all duration-300 overflow-hidden border-2 hover:border-primary/50 animate-float ${project.featured ? "md:col-span-2 lg:col-span-2" : ""}`}
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               <div className="relative overflow-hidden">
