@@ -38,7 +38,7 @@ export function ContactSection() {
               </a>
             </div>
 
-            <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border-2 border-accent/20 hover:border-accent/40 hover:shadow-lg hover:shadow-accent/10 transition-all duration-300 group">
+            {/* <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border-2 border-accent/20 hover:border-accent/40 hover:shadow-lg hover:shadow-accent/10 transition-all duration-300 group">
               <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
                 <Phone className="h-8 w-8 text-accent" />
               </div>
@@ -46,15 +46,15 @@ export function ContactSection() {
               <a href="tel:09353069571" className="text-muted-foreground hover:text-accent transition-colors">
                 09353069571
               </a>
-            </div>
+            </div> */}
 
-            <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border-2 border-primary/20 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 group">
+            {/* <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border-2 border-primary/20 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 group">
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                 <MapPin className="h-8 w-8 text-primary" />
               </div>
               <h4 className="font-semibold mb-2">Location</h4>
               <span className="text-muted-foreground">Davao City, Philippines</span>
-            </div>
+            </div> */}
 
             <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border-2 border-accent/20 hover:border-accent/40 hover:shadow-lg hover:shadow-accent/10 transition-all duration-300 group">
               <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">

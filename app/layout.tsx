@@ -7,11 +7,11 @@ import { Suspense } from "react"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "Isabela Ayn M. Deocampo - Web Designer & Developer",
+  title: "Work with Ayn",
   description:
     "Portfolio of Isabela Ayn M. Deocampo, a Web Designer & Developer specializing in responsive websites, UI/UX design, and full-stack development.",
   icons: {
-    icon: "/women.ico", 
+    icon: "/computer.ico", 
   },
 }
 
