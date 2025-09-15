@@ -8,15 +8,15 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="bg-emerald-50/50 min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12"
+      className="bg-card/30 min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12"
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-5">
         {/* LEFT: Profile card */}
         <div className="rounded-3xl bg-white p-6 sm:p-8 shadow-md border border-emerald-900/5 flex flex-col items-center">
           <div className="relative w-60 h-60 sm:w-72 sm:h-72">
-            <div className="absolute inset-0 rounded-full border-2 border-emerald-600/50 border-dotted" />
+            <div className="absolute inset-0 rounded-full" />
             <Image
-              src="/images/profile4.png.png"
+              src="/images/profile5.png"
               alt="Your name"
               fill
               priority

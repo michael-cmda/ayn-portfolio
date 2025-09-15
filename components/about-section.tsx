@@ -27,15 +27,6 @@ export function AboutSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <p className="text-lg mb-6 text-pretty">
-              I've worked with WordPress, Shopify, GoHighLevel, Vue.js, and more to deliver client-focused solutions. My
-              work spans UI/UX design, SEO optimization, and custom development to help businesses grow online. 🚀
-            </p>
-            <p className="text-lg mb-8 text-pretty">
-              As a recent graduate with a Bachelor of Information Technology from the University of Mindanao, I bring
-              fresh perspectives combined with practical experience from internships and professional roles.
-            </p>
-
             <div className="bg-card p-6 rounded-lg border-2 border-primary/20 hover:border-primary/40 transition-all duration-300 shadow-lg">
               <div className="flex items-center mb-4">
                 <GraduationCap className="h-6 w-6 text-primary mr-3" />
