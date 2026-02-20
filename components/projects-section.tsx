@@ -46,6 +46,60 @@ export function ProjectsSection() {
       image: "/images/festival-qr-hero.png",
       technologies: ["Landing Page", "QR Codes", "Event Management", "Responsive Design"],
     },
+    {
+    title: "Puppy Training Portal",
+    description: "A comprehensive onboarding landing page for new puppy owners, featuring course modules, progress expectations, and curriculum highlights.",
+    image: "/images/Puppy Program Course.png",
+    technologies: ["LMS Design", "UI/UX", "Onboarding", "Responsive"],
+  },
+  {
+    title: "Private Training Portal",
+    description: "Client-facing dashboard design for personalized dog training programs, focusing on behavior modification and tailored training plans.",
+    image: "/images/Private Program Course.png",
+    technologies: ["Client Portal", "Web Design", "Service Design"],
+  },
+  {
+    title: "Midway Training Session",
+    description: "A 'Phase 2' transition page designed to maintain student momentum, featuring learning theory foundations and video resource libraries.",
+    image: "/images/Midway Session.png",
+    technologies: ["E-Learning", "Video Integration", "Course Design"],
+  },
+  {
+    title: "IGP Helper Camp Event",
+    description: "High-energy event landing page for professional dog training camps, featuring tiered pricing tables and registration management.",
+    image: "/images/igarki.png",
+    technologies: ["Event Landing Page", "Conversion Optimization", "Tiered Pricing"],
+  },
+  {
+    title: "Founder-Free Workshop",
+    description: "A high-end B2B landing page for 'Buzzworthy,' designed for 7-8 figure founders looking to automate their business operations.",
+    image: "/images/Founder Workshop.png",
+    technologies: ["B2B Marketing", "Conversion Design", "Sales Funnel"],
+  },
+  {
+    title: "Board & Train Service Page",
+    description: "Localized service page for a dog training facility in NY, featuring social proof, FAQ sections, and integrated Google Maps.",
+    image: "/images/Board And Train In Albertson NY K9 Mania Dog Training.png",
+    technologies: ["Local SEO", "Web Design", "Lead Generation"],
+  },
+  {
+    title: "Baseball Ducks Partnership",
+    description: "Marketing landing page for a sports-themed pet promotion, featuring free consultation leads and event schedules.",
+    image: "/images/baseball ducks.png",
+    technologies: ["Partnership Marketing", "Promotional Page", "UI Design"],
+  },
+  {
+    title: "Rule of 26 Review Page",
+    description: "A streamlined, high-conversion review solicitation page for authors, featuring Amazon review integration and social proof.",
+    image: "/images/Rule of 26 Review Page.png",
+    technologies: ["Reputation Management", "Minimalist Design", "UX"],
+  },
+  {
+    title: "Revenue Engine Audit",
+    description: "Interactive audit landing page featuring a personalized 'walk-through' UI to help business owners identify operational bottlenecks.",
+    image: "/images/Revenue Engine Audit.png",
+    technologies: ["SaaS Design", "Consultancy UI", "Business Analytics"],
+  },
   ]
 
   return (

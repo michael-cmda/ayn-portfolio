@@ -3,116 +3,98 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
+import { cn } from "@/lib/utils"
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState("home")
 
   const scrollToSection = (sectionId: string) => {
+    setActiveSection(sectionId)
     const element = document.getElementById(sectionId)
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
-      setIsOpen(false)
+      element.scrollIntoView({ behavior: "smooth", block: "start" })
     }
+    setIsOpen(false)
   }
 
+  const navItems = [
+    { id: "home", label: "Home" },
+    { id: "experience", label: "Experience" },
+    { id: "projects", label: "Projects" },
+    { id: "services", label: "Services" },
+    { id: "contact", label: "Contact" },
+  ]
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <div className="font-bold text-xl text-primary">Isabela Ayn Deocampo</div>
+    <div className="fixed top-0 left-0 right-0 z-50 flex justify-center p-4">
+      <nav className="w-full max-w-5xl rounded-2xl border bg-background/70 backdrop-blur-xl border-border shadow-md px-6 py-2 transition-all duration-300">
+        
+        <div className="flex justify-between items-center h-12">
+          
+          {/* Logo */}
+          <div className="font-black text-xl tracking-tighter text-foreground cursor-default">
+            Isabela Ayn<span className="text-primary">.</span>
+          </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
-            <button
-              onClick={() => scrollToSection("home")}
-              className="text-primary hover:text-green-300 transition-colors"
-            >
-              Home
-            </button>
-            {/* <button
-              onClick={() => scrollToSection("about")}
-              className="text-primary hover:text-green-300 transition-colors"
-            >
-              About
-            </button> */}
-            <button
-              onClick={() => scrollToSection("experience")}
-              className="text-primary hover:text-green-300 transition-colors"
-            >
-              Experience
-            </button>
-            <button
-              onClick={() => scrollToSection("projects")}
-              className="text-primary hover:text-green-300 transition-colors"
-            >
-              Projects
-            </button>
-            <button
-              onClick={() => scrollToSection("services")}
-              className="text-primary hover:text-green-300 transition-colors"
-            >
-              Services
-            </button>
-            <button
-              onClick={() => scrollToSection("contact")}
-              className="text-primary hover:text-green-300 transition-colors"
-            >
-              Contact
-            </button>
+          <div className="hidden md:flex items-center space-x-1">
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className={cn(
+                  "px-4 py-1.5 text-xs font-semibold uppercase tracking-widest transition-all rounded-full",
+                  activeSection === item.id
+                    ? "bg-primary text-primary-foreground shadow-sm"
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                )}
+              >
+                {item.label}
+              </button>
+            ))}
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <Button variant="ghost" size="sm" onClick={() => setIsOpen(!isOpen)}>
-              {isOpen ? <X className="h-5 w-5 text-primary" /> : <Menu className="h-5 w-5 text-primary" />}
-            </Button>
-          </div>
+          {/* Mobile Toggle */}
+          <Button
+            variant="secondary"
+            size="icon"
+            className="md:hidden rounded-xl w-10 h-10"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? (
+              <X className="h-5 w-5" />
+            ) : (
+              <Menu className="h-5 w-5" />
+            )}
+          </Button>
         </div>
 
         {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-background border-t border-border">
+        <div
+          className={cn(
+            "md:hidden overflow-hidden transition-all duration-300 ease-in-out",
+            isOpen ? "max-h-80 opacity-100 mt-4" : "max-h-0 opacity-0"
+          )}
+        >
+          <div className="flex flex-col space-y-1 pb-4">
+            {navItems.map((item) => (
               <button
-                onClick={() => scrollToSection("home")}
-                className="block px-3 py-2 text-primary hover:text-green-300 transition-colors w-full text-left"
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className={cn(
+                  "text-left px-4 py-3 text-sm font-bold rounded-xl transition-colors",
+                  activeSection === item.id
+                    ? "bg-primary/10 text-primary"
+                    : "text-muted-foreground hover:bg-muted"
+                )}
               >
-                Home
+                {item.label}
               </button>
-              <button
-                onClick={() => scrollToSection("about")}
-                className="block px-3 py-2 text-primary hover:text-green-300 transition-colors w-full text-left"
-              >
-                About
-              </button>
-              <button
-                onClick={() => scrollToSection("experience")}
-                className="block px-3 py-2 text-primary hover:text-green-300 transition-colors w-full text-left"
-              >
-                Experience
-              </button>
-              <button
-                onClick={() => scrollToSection("projects")}
-                className="block px-3 py-2 text-primary hover:text-green-300 transition-colors w-full text-left"
-              >
-                Projects
-              </button>
-               <button
-                onClick={() => scrollToSection("services")}
-                className="block px-3 py-2 text-primary hover:text-green-300 transition-colors w-full text-left"
-              >
-                Services
-              </button>
-              <button
-                onClick={() => scrollToSection("contact")}
-                className="block px-3 py-2 text-primary hover:text-green-300 transition-colors w-full text-left"
-              >
-                Contact
-              </button>
-            </div>
+            ))}
           </div>
-        )}
-      </div>
-    </nav>
+        </div>
+      </nav>
+    </div>
   )
 }
