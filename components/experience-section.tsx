@@ -1,15 +1,13 @@
 "use client"
 
-import { useState, useRef } from "react"
+import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
-import { MapPin, Calendar, Briefcase, ChevronRight, ExternalLink } from "lucide-react"
+import { MapPin, Calendar, Briefcase, ChevronRight } from "lucide-react"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { ImageModal } from "./image-modal"
+
 const experiences = [
   {
-    date: "2025-05",
     title: "Marketing Associate",
     company: "K9 Mania Dog Training",
     location: "Davao City",
@@ -20,10 +18,8 @@ const experiences = [
       "Supported social media operations and compiled monthly reports",
     ],
     skills: ["WordPress", "Shopify", "GoHighLevel", "Performance Optimization"],
-    highlightImage: "/images/profile2.png",
   },
   {
-    date: "2024-06",
     title: "Web Designer & Developer",
     company: "Infosoft Studio",
     location: "Davao City",
@@ -35,10 +31,8 @@ const experiences = [
       "Applied SEO strategies and taught workshops for clients",
     ],
     skills: ["Vue.js", "Figma", "WordPress", "SEO"],
-    highlightImage: "/images/profile2.png",
   },
   {
-    date: "2024-02",
     title: "Intern",
     company: "Infosoft Studio",
     location: "Davao City",
@@ -49,19 +43,16 @@ const experiences = [
       "Projects included tourism website and e-ticketing services",
     ],
     skills: ["Team Leadership", "Project Management", "Figma"],
-    highlightImage: "/images/profile2.png",
   },
 ]
 
 export function ExperienceSection() {
   const containerRef = useRef(null)
   const isInView = useInView(containerRef, { once: true, margin: "-100px" })
-  const [modalState, setModalState] = useState({ open: false, images: [] as string[] })
 
   return (
     <section id="experience" className="py-24 bg-background" ref={containerRef}>
-      <div className="max-w-6xl mx-auto px-6">
-        {/* Header Section */}
+      <div className="max-w-5xl mx-auto px-6">
         <div className="mb-16">
           <Badge variant="outline" className="mb-4 px-3 py-1 text-primary border-primary/30">
             Career Path
@@ -71,103 +62,69 @@ export function ExperienceSection() {
           </h2>
         </div>
 
-        {/* Timeline Container */}
-        <div className="relative space-y-12">
+        <div className="relative space-y-8">
           {experiences.map((exp, index) => (
             <motion.div 
               key={index}
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="group relative grid grid-cols-1 md:grid-cols-[180px_1fr] gap-8 md:gap-12"
+              className="group relative"
             >
-              {/* 1. DATE COLUMN (Desktop only) */}
-              <div className="hidden md:flex flex-col items-end pt-2 text-right">
-                <span className="text-sm font-bold text-primary tracking-tight">
-                  {exp.period.split(' – ')[0]}
-                </span>
-                <span className="text-xs font-medium text-muted-foreground uppercase tracking-widest mt-1">
-                  {exp.period.split(' – ')[1]}
-                </span>
+              {/* Vertical Timeline Line */}
+              <div className="absolute left-0 top-0 bottom-0 w-[1px] bg-border group-last:bg-gradient-to-b group-last:from-border group-last:to-transparent ml-4 md:ml-0">
+                <div className="absolute top-8 -left-[5px] w-2.5 h-2.5 rounded-full bg-background border-2 border-primary shadow-[0_0_10px_rgba(var(--primary),0.5)]" />
               </div>
 
-              {/* 2. THE CARD & DOT COLUMN */}
-              <div className="relative pl-8 md:pl-0">
-                {/* Vertical Timeline Line */}
-                <div className="absolute left-0 md:-left-6 top-0 bottom-0 w-[1px] bg-border group-last:bg-gradient-to-b group-last:from-border group-last:to-transparent">
-                  {/* Glowing Dot */}
-                  <div className="absolute top-2 -left-[5px] w-2.5 h-2.5 rounded-full bg-background border-2 border-primary shadow-[0_0_10px_rgba(var(--primary),0.5)] transition-transform group-hover:scale-125" />
-                </div>
-
-                <Card className="overflow-hidden border border-border/60 bg-card hover:border-primary/40 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300">
-                  <div className="grid grid-cols-1 lg:grid-cols-12">
+              <Card className="ml-10 md:ml-8 overflow-hidden border border-border/60 bg-card hover:border-primary/40 transition-all duration-300">
+                <div className="p-6 md:p-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+                  
+                  {/* Left Column: Role Info */}
+                  <div className="lg:col-span-1">
+                    <div className="flex items-center gap-2 text-primary font-bold mb-2">
+                      <Briefcase size={14} />
+                      <span className="text-xs uppercase tracking-widest">{exp.company}</span>
+                    </div>
+                    <h3 className="text-xl font-bold mb-4">{exp.title}</h3>
                     
-                    {/* Text Content */}
-                    <div className="p-6 lg:p-8 lg:col-span-7">
-                      <div className="mb-6">
-                        <div className="flex items-center gap-2 text-primary font-bold mb-2">
-                          <Briefcase size={14} />
-                          <span className="text-xs uppercase tracking-[0.2em]">{exp.company}</span>
-                        </div>
-                        <h3 className="text-2xl font-bold mb-3">{exp.title}</h3>
-                        
-                        {/* Mobile/Tablet Date & Location */}
-                        <div className="flex flex-wrap gap-4 text-sm text-muted-foreground font-medium">
-                          <span className="flex items-center gap-1.5 md:hidden">
-                            <Calendar size={14} className="text-primary" /> {exp.period}
-                          </span>
-                          <span className="flex items-center gap-1.5">
-                            <MapPin size={14} className="text-primary" /> {exp.location}
-                          </span>
-                        </div>
+                    <div className="space-y-2 text-sm text-muted-foreground mb-6">
+                      <div className="flex items-center gap-2">
+                        <Calendar size={14} className="text-primary/70" /> {exp.period}
                       </div>
-
-                      <ul className="space-y-3 mb-8">
-                        {exp.description.map((item, i) => (
-                          <li key={i} className="flex items-start gap-3">
-                            <ChevronRight size={14} className="mt-1 text-primary shrink-0 opacity-70" />
-                            <span className="text-muted-foreground text-[0.95rem] leading-relaxed">{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-
-                      <div className="flex flex-wrap gap-2">
-                        {exp.skills.map((skill) => (
-                          <Badge key={skill} variant="secondary" className="bg-secondary/40 text-xs py-1 hover:bg-primary hover:text-white transition-colors">
-                            {skill}
-                          </Badge>
-                        ))}
+                      <div className="flex items-center gap-2">
+                        <MapPin size={14} className="text-primary/70" /> {exp.location}
                       </div>
                     </div>
 
-                    {/* Image Area */}
-                    <div 
-                      className="relative h-56 lg:h-auto lg:col-span-5 cursor-pointer overflow-hidden border-t lg:border-t-0 lg:border-l border-border/50"
-                      onClick={() => setModalState({ open: true, images: [exp.highlightImage] })}
-                    >
-                      <img 
-                        src={exp.highlightImage} 
-                        alt={exp.company}
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-end p-4">
-                      </div>
+                    <div className="flex flex-wrap gap-2">
+                      {exp.skills.map((skill) => (
+                        <Badge key={skill} variant="secondary" className="bg-secondary/40 text-[10px] px-2 py-0">
+                          {skill}
+                        </Badge>
+                      ))}
                     </div>
                   </div>
-                </Card>
-              </div>
+
+                  {/* Right Column: Responsibilities */}
+                  <div className="lg:col-span-2 border-t lg:border-t-0 lg:border-l border-border/50 pt-6 lg:pt-0 lg:pl-8">
+                    <ul className="space-y-3">
+                      {exp.description.map((item, i) => (
+                        <li key={i} className="flex items-start gap-3">
+                          <ChevronRight size={14} className="mt-1 text-primary shrink-0 opacity-70" />
+                          <span className="text-muted-foreground text-sm leading-relaxed">
+                            {item}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                </div>
+              </Card>
             </motion.div>
           ))}
         </div>
       </div>
-
-      <ImageModal
-        isOpen={modalState.open}
-        onClose={() => setModalState({ ...modalState, open: false })}
-        images={modalState.images}
-        currentImageIndex={0}
-        onImageClick={() => {}}
-      />
     </section>
   )
 }
