@@ -13,11 +13,12 @@ const experiences = [
     location: "Davao City",
     period: "May 2025 – Present",
     description: [
-      "Developed and maintained high-performance websites (WordPress, Shopify, GHL)",
-      "Optimized site performance and conducted routine maintenance",
-      "Supported social media operations and compiled monthly reports",
+      "Developed and maintained high-performance websites (WordPress, Shopify)",
+      "Managed hosting, updates, backups, and uptime monitoring",
+      "Created and optimized funnels, landing pages, and workflows in GoHighLevel",
+      "Applied SEO strategies to improve website visibility and optimize performance.",
     ],
-    skills: ["WordPress", "Shopify", "GoHighLevel", "Performance Optimization"],
+    skills: [],
   },
   {
     title: "Web Designer & Developer",
@@ -25,12 +26,12 @@ const experiences = [
     location: "Davao City",
     period: "Jun 2024 – May 2025",
     description: [
-      "Designed client-centered websites using Figma",
-      "Built a legislative tracking system with Vue.js, Vuex, and Vuetify",
-      "Customized WordPress sites with Elementor and CSS",
-      "Applied SEO strategies and taught workshops for clients",
+      "Designed client-centered websites and systems using Figma",
+      "Built a Legislative Tracking System with Vue.js, Vuex, and Vuetify",
+      "Customized WordPress sites with Elementor",
+      "Led workshops on WordPress, Figma, and Canva basics",
     ],
-    skills: ["Vue.js", "Figma", "WordPress", "SEO"],
+    skills: [],
   },
   {
     title: "Intern",
@@ -39,10 +40,10 @@ const experiences = [
     period: "Feb 2024 – May 2024",
     description: [
       "Led a team of interns and managed project timelines",
-      "Revamped WordPress sites and created interfaces with Figma",
-      "Projects included tourism website and e-ticketing services",
+      "Revamped and customized responsive WordPress Official Government Websites in Davao Region.",
+      "Created  interfaces using Figma for diverse projects including a tourism website, e-ticketing service for kiosks, merchandise website, pet profiling system, and school research portal.",
     ],
-    skills: ["Team Leadership", "Project Management", "Figma"],
+    skills: [],
   },
 ]
 

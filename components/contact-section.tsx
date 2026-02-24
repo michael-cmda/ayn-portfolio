@@ -7,8 +7,8 @@ export function ContactSection() {
     <section id="contact" className="py-15 px-4 sm:px-6 lg:px-8 bg-card/30">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Get In Touch ✨
+          <h2 className="text-3xl sm:text-4xl font-bold mb-2">
+            Get In Touch
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty">
             Ready to start your next project? Let's discuss how I can help bring your ideas to life.
@@ -16,13 +16,13 @@ export function ContactSection() {
         </div>
 
         <div className="max-w-2xl mx-auto">
-          <div className="text-center mb-12">
+          {/* <div className="text-center mb-12">
             <h3 className="text-2xl font-semibold mb-6">Let's work together 🌟</h3>
             <p className="text-muted-foreground mb-8 text-pretty">
               I'm always interested in new opportunities and exciting projects. Whether you need a website, mobile app,
               or digital solution, I'd love to hear from you.
             </p>
-          </div>
+          </div> */}
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border-2 border-primary/20 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 group">

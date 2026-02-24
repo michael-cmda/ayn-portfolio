@@ -125,8 +125,8 @@ const filteredProjects =
     <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-card/30 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-10">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-primary">
-            Featured Projects ✨
+          <h2 className="text-3xl sm:text-4xl font-bold mb-2">
+            Featured Projects
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty">
             A showcase of my work spanning mobile apps, web systems, and cross-platform solutions.

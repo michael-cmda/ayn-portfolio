@@ -20,10 +20,12 @@ export function Navigation() {
 
   const navItems = [
     { id: "home", label: "Home" },
-    { id: "experience", label: "Experience" },
-    { id: "projects", label: "Projects" },
     { id: "services", label: "Services" },
+    { id: "projects", label: "Projects" },
+    { id: "experience", label: "Experience" },
+    { id: "about", label: "About" },
     { id: "contact", label: "Contact" },
+
   ]
 
   return (

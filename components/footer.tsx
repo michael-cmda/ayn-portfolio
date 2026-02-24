@@ -6,9 +6,8 @@ export function Footer() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center">
           <p className="text-muted-foreground flex items-center justify-center gap-2">
-            Made with <Heart className="h-4 w-4 text-red-500 fill-current" /> by Ayn
+            Thanks for making it all the way down here. I’d love to bring ideas to life with you. :-)
           </p>
-          {/* <p className="text-sm text-muted-foreground mt-2">© 2025 All rights reserved.</p> */}
         </div>
       </div>
     </footer>
