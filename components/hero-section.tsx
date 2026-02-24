@@ -33,7 +33,7 @@ export function HeroSection() {
             variants={fadeInUp}
             className="inline-block text-primary font-bold tracking-[0.3em] uppercase text-[10px] mb-4"
           >
-            Based in San Francisco
+            Based in Philippines
           </motion.span>
 
           <motion.h1
@@ -89,14 +89,14 @@ export function HeroSection() {
   variants={fadeInUp}
   className="flex gap-8 items-center justify-center lg:justify-start"
 >
-  <a
+  {/* <a
     href="https://github.com/iadeocampo/"
     target="_blank"
     rel="noopener noreferrer"
     className="text-black/40 hover:text-black transition-colors flex items-center gap-2 text-sm font-bold tracking-widest"
   >
     <Github size={20} /> GITHUB
-  </a>
+  </a> */}
   <a
     href="https://www.linkedin.com/in/isabela-ayn/"
     target="_blank"
@@ -105,14 +105,14 @@ export function HeroSection() {
   >
     <Linkedin size={20} /> LINKEDIN
   </a>
-  <a
+  {/* <a
     href="https://www.facebook.com/isabela.aynd"
     target="_blank"
     rel="noopener noreferrer"
     className="text-black/40 hover:text-[#1877f2] transition-colors flex items-center gap-2 text-sm font-bold tracking-widest"
   >
     <Facebook size={20} /> FACEBOOK
-  </a>
+  </a> */}
 </motion.div>
         </motion.div>
 
